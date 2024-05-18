@@ -11,7 +11,15 @@
         <form method="post">
             {% csrf_token %}
             <label for="tname">Topic Name :</label>
-            <input type="text" name="tname" id="tname"><br>
+            <select name="tname" id="tname">
+
+                {% for to in QLTO %}
+
+                    <option value="{{to.topic_name}}">{{to.topic_name}}</option>
+
+                {% endfor %}
+            </select><br>
+
             <label for="name">Name :</label>
             <input type="text" name="name" id="name"><br>
             <label for="url">Url :</label>
